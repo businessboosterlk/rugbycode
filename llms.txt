@@ -1,0 +1,26 @@
+# Rugby Code
+
+Rugby Code is a person-first rugby development business founded and directed by
+Aaron Jones, based in Wellington, New Zealand, and working worldwide. The motto is
+"Train. Play. Coach. Live it."
+
+Rugby Code develops both players and coaches of every age and level, from juniors
+to senior and premier level, and focuses on the person before the player: skills
+and confidence on the field, life skills off it.
+
+## Services
+- Player Programs: specialised development for players of all ages and levels, in New Zealand and globally.
+- Coach Consultancy: sharpening coaches, structures and clubs, locally and worldwide.
+- 1-to-1 Mentoring: personal mentoring for players and coaches who want focused growth.
+- Local & International Touring: tours that grow players through new challenges, culture and competition.
+
+## Contact
+- Email: aaron@rugbycode.co.nz
+- WhatsApp / Phone (New Zealand): +64 21 231 3277
+- Phone (Ireland): +353 87 205 9608
+- Based in: Wellington, New Zealand
+- Instagram: https://instagram.com/rugbycode
+- Facebook: https://www.facebook.com/rugbycode
+
+## Pages
+- Home: https://businessboosterlk.github.io/rugbycode/
