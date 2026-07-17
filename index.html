@@ -170,7 +170,10 @@ h3{font-size:clamp(1.15rem,1.8vw,1.4rem)}
 
 /* ---- hero (photo band, centered) ---- */
 .hero{position:relative;min-height:min(78vh,700px);display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;color:#fff}
-.hero-media{position:absolute;inset:0;z-index:0} .hero-media img{width:100%;height:100%;object-fit:cover;object-position:60% 30%}
+.hero-media{position:absolute;inset:0;z-index:0}
+.hero-media img,.hero-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 45%}
+.hero-media video{opacity:0;transition:opacity 1s var(--ease)}
+.hero-media video.playing{opacity:1}
 .hero::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(10,15,20,.38) 0%,rgba(10,15,20,.26) 45%,rgba(10,15,20,.6) 100%)}
 .hero-inner{position:relative;z-index:2;padding-block:clamp(70px,11vh,130px)}
 .hero-inner .kicker{color:#9FD9F6}
@@ -427,7 +430,10 @@ html.rv [data-reveal].in{opacity:1;transform:none}
   <span id="top"></span>
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-media"><img src="images/hero-dusk.jpg" alt="Rugby field at dusk under floodlights with a ball resting on the grass" width="1760" height="990" fetchpriority="high"></div>
+    <div class="hero-media">
+      <img id="heroPoster" src="images/hero-video-poster.jpg" alt="A coach running a distant training session with a rugby team at dusk under floodlights" width="1760" height="990" fetchpriority="high">
+      <video id="heroVideo" muted loop playsinline preload="none" poster="images/hero-video-poster.jpg" aria-hidden="true" tabindex="-1"></video>
+    </div>
     <div class="container hero-inner">
       <span class="kicker" data-reveal>Person-first rugby development &bull; NZ &amp; worldwide</span>
       <h1 class="display">
@@ -758,6 +764,25 @@ html.rv [data-reveal].in{opacity:1;transform:none}
     "use strict";
     var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     document.getElementById("yr").textContent=new Date().getFullYear();
+
+    /* hero video: load + play only when allowed and in view; poster stays otherwise */
+    (function(){
+      var v=document.getElementById("heroVideo");if(!v)return;
+      if(reduce)return; // reduced motion: keep the still poster, never autoplay
+      var src="video/hero-training.mp4",loaded=false;
+      function start(){
+        if(!loaded){var s=document.createElement("source");s.src=src;s.type="video/mp4";v.appendChild(s);v.load();loaded=true;}
+        var p=v.play();if(p&&p.catch)p.catch(function(){});
+      }
+      v.addEventListener("playing",function(){v.classList.add("playing");});
+      var hero=document.querySelector(".hero");
+      if("IntersectionObserver" in window){
+        var io=new IntersectionObserver(function(es){es.forEach(function(en){
+          if(en.isIntersecting){start();} else {v.pause();}
+        });},{threshold:.1});
+        io.observe(hero);
+      }else{start();}
+    })();
 
     /* sticky header refine */
     var hdr=document.getElementById("hdr");
