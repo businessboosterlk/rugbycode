@@ -235,11 +235,20 @@ html.rv .display .wi{animation:wrise 1.05s var(--ease2) both;animation-delay:cal
 .collage::after{content:"";position:absolute;z-index:0;width:86%;aspect-ratio:1;border-radius:50%;border:1.5px dashed rgba(28,159,224,.3);top:48%;left:50%;transform:translate(-50%,-50%)}
 .collage img{position:relative;z-index:1;border-radius:var(--radius);border:5px solid #fff;box-shadow:var(--shadow-md);transition:transform .4s var(--ease)}
 .collage img:nth-of-type(1){transform:rotate(-2.6deg)}
-.collage img:nth-of-type(2){transform:rotate(2.2deg);margin-top:38px}
-.collage img:nth-of-type(3){transform:rotate(1.8deg);width:82%;justify-self:end;margin-top:-4px}
-.collage img:hover{transform:rotate(0) scale(1.02)}
-.collage .chip{position:absolute;z-index:2;right:2%;bottom:8%;display:inline-flex;align-items:center;gap:.5rem;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:999px;padding:.6rem 1.1rem;font-family:var(--font-display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:.72rem;letter-spacing:.04em;color:var(--ink);white-space:nowrap}
+.collage img:nth-of-type(2){transform:rotate(2.4deg);margin-top:36px}
+.collage img:nth-of-type(3){transform:rotate(1.8deg);margin-top:-6px}
+.collage img:nth-of-type(4){transform:rotate(-2deg);margin-top:30px}
+.collage img:hover{transform:rotate(0) scale(1.03);z-index:2;position:relative}
+.collage .chip{position:absolute;z-index:3;right:2%;bottom:2%;display:inline-flex;align-items:center;gap:.5rem;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:999px;padding:.6rem 1.1rem;font-family:var(--font-display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:.72rem;letter-spacing:.04em;color:var(--ink);white-space:nowrap}
 .collage .chip svg{width:15px;height:15px;color:var(--blue);flex:none}
+/* dark-scene overrides for a navy feature band */
+.dark .collage::before{background:rgba(28,159,224,.12)}
+.dark .collage::after{border-color:rgba(28,159,224,.34)}
+.dark .ib b{color:#fff}
+.dark .ib p{color:#9FB2C2}
+.dark .ib .ic{background:rgba(28,159,224,.16);color:var(--blue-l)}
+.dark .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.28)}
+.dark .btn-ghost:hover{background:#fff;color:var(--ink);border-color:#fff}
 .ib-list{display:grid;gap:1.15rem;margin-top:1.4rem}
 .ib{display:flex;gap:.95rem;align-items:flex-start}
 .ib .ic{width:42px;height:42px;border-radius:12px;background:var(--blue-soft);color:var(--blue-d);display:grid;place-items:center;flex:none} .ib .ic svg{width:21px;height:21px}
@@ -496,6 +505,7 @@ html.rv [data-reveal].in{opacity:1;transform:none}
         <img src="images/juniors-session.jpg" alt="Junior rippa rugby session with Rugby Code coaches" width="1280" height="960" loading="lazy" decoding="async">
         <img src="images/hero-match.jpg" alt="Senior club match action" width="1280" height="853" loading="lazy" decoding="async">
         <img src="images/training-detail.jpg" alt="Rugby ball, boots and training cones on the grass" width="1200" height="900" loading="lazy" decoding="async">
+        <img src="images/junior-scrum.jpg" alt="A coach guiding a junior scrum" width="1280" height="1280" loading="lazy" decoding="async">
         <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="4"/><path d="M5.5 21a6.5 6.5 0 0 1 13 0"/></svg>All ages &amp; levels</span>
       </div>
       <div>
@@ -516,7 +526,7 @@ html.rv [data-reveal].in{opacity:1;transform:none}
   </section>
 
   <!-- COACH CONSULTANCY (content left, collage right) -->
-  <section class="section feature" id="coaches" style="background:var(--surface)">
+  <section class="section feature dark" id="coaches">
     <div class="container split">
       <div>
         <span class="kicker" data-reveal>Our people</span>
@@ -536,6 +546,7 @@ html.rv [data-reveal].in{opacity:1;transform:none}
         <img src="images/coaching-team.jpg" alt="The Rugby Code coaching group together at a development day" width="1100" height="846" loading="lazy" decoding="async">
         <img src="images/aaron-jones.jpg" alt="Aaron Jones, Founder and Director of Rugby Code" width="1000" height="547" loading="lazy" decoding="async">
         <img src="images/junior-scrum.jpg" alt="A Rugby Code coach guiding a junior scrum session" width="1280" height="1280" loading="lazy" decoding="async">
+        <img src="images/hero-video-poster.jpg" alt="A coach running a distant training session at dusk under floodlights" width="1760" height="990" loading="lazy" decoding="async">
         <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>NZ &amp; worldwide network</span>
       </div>
     </div>
